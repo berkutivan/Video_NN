@@ -31,6 +31,14 @@ I used VGG16 as such a model.  I got the following results:
 ![GEnerate img with new loss](https://github.com/berkutivan/Video_NN/blob/main/after_result.jpg)
 
 # Training
+
+I trained the model on 448x224 pixel images on a T4 GPU. The first step was to pre-train the model on MSE loss (approximately 30 epochs) to speed up learning. Then, I completed the training on the new loss-function and got the following results:
+
+![](https://github.com/berkutivan/Video_NN/blob/main/loss.png)
+
+unfortunately, the process took place slowly for ~ a week, since free time in colab is limited, the batch size was 19, and the weight orders of the model were ~ 3 million. 
+For this reason, it was not possible to train a model for video prolongation with a size of 1024X768 pixels or any larger. But my reader can do it)
+
 # Сonclusion and future plans
 Thus, we have disassembled the U-net device, methods of dealing with blurred images and technical aspects of my research.
 In conclusion, I want to say that this topic is more a field for research, for example, you can pre-evaluate whether the generated frame will turn out to be of high quality and based on this decide whether it is worth spending time creating it. For example, in a video there is a transition between scenes or a camera view. In this case, it doesn't make much sense to generate a frame in the middle. And this is just one of the many things that I would like to add in the future.<br />
