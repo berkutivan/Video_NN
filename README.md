@@ -1,7 +1,7 @@
 # Video_NN
 This page is my attempt to study image processing using neural networks, namely, to learn how to predict the average frame in a video by two extremes.
 Below is a description of the README:
-[Structure of repository](#Structure-of-repository)
+[Structure of repository](#Structure-of-repository) \\
 [Problem with MSE-loss and solution](#Problem-with-MSE-loss-and-solution) -  an interesting and frequently encountered problem for me is the blurring of the generated image and the solution to this issue
 [Training](#Training) - how I trained the neural network
 [Сonclusion and future plans](#Сonclusion-and-future-plans) - things that I would like to explore further and improvements that I would like to add
