@@ -35,4 +35,4 @@ I used VGG16 as such a model.  I got the following results:
 Thus, we have disassembled the U-net device, methods of dealing with blurred images and technical aspects of my research.
 In conclusion, I want to say that this topic is more a field for research, for example, you can pre-evaluate whether the generated frame will turn out to be of high quality and based on this decide whether it is worth spending time creating it. For example, in a video there is a transition between scenes or a camera view. In this case, it doesn't make much sense to generate a frame in the middle. And this is just one of the many things that I would like to add in the future.
 
-![GEnerate img with new loss](https://github.com/berkutivan/Video_NN/blob/main/prolongation_video.mp4)
+![GEnerate img with new loss](https://github.com/berkutivan/Video_NN/blob/main/generate)
