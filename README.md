@@ -21,9 +21,14 @@ The problem with U-net in this task is that this model has a lot of weights, whi
 My model includes ~ 3 million weights, unfortunately, I could not test it on a good graphics card, but the speed of generating RGB images with dimensions of 448X224 pixels on the built-in AMD RADEON TM graphics card was about 5 seconds.
 # Problem with MSE-loss and solution: 
 First, I trained the model using MSE loss, which led (after 30 epochs) to the following result:
-![GEnerate img with MSE loss](https://github.com/berkutivan/Video_NN/blob/main/before_result.jpg)
-
-
+![Generate img with MSE loss](https://github.com/berkutivan/Video_NN/blob/main/before_result.jpg)
+Explanation: A time series of 3 images was extracted from the dataset. The first and second picture were fed to the input of the neural network, and the resulting one (marked NN) was compared with the second one. <br />
+The problem is that the generated and original images are compared pixel by pixel, which is inconvenient in this task. 
+A small example: we have to generate an image of the chessboard. Even if we get a realistic image of the chessboard, but shifted by one square relative to the real one, the MSE loss will be maximum. As a result, after several epochs, our neural network will produce just a gray picture. <br />
+The solution is this: compare the images not pixel-by-pixel, but as if a person compared them figuratively. For me, fortunately or unfortunately, this problem has already been solved.
+Images are collapsed using a model that has already been pre-trained and is able to recognize images. After that, MSE-loss is applied to the convolutions.
+I used VGG16 as such a model.  I got the following results:
+![GEnerate img with new loss](https://github.com/berkutivan/Video_NN/blob/main/after_result.jpg)
 
 # Training
 # Сonclusion and future plans
